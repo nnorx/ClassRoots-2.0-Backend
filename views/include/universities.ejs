@@ -1,0 +1,64 @@
+<table class="table">
+  <thead class=" text-primary">
+    <th>
+      Code
+    </th>
+    <th>
+      Name
+    </th>
+    <th>
+      City
+    </th>
+    <th>
+      State
+    </th>
+    <th>
+      Country
+    </th>
+    <th>
+      Postal Code
+    </th>
+    <th>
+      Update
+    </th>
+    <th>
+      Delete
+    </th>
+  </thead>
+  <tbody>
+    <% universities.forEach(function(university){ %>
+    <tr>
+      <td>
+        <%= university.code %>
+      </td>
+      <td>
+        <%= university.name %>
+      </td>
+      <td>
+        <%= university.city %>
+      </td>
+      <td>
+        <%= university.state %>
+      </td>
+      <td>
+        <%= university.country %>
+      </td>
+      <td>
+        <%= university.postalCode %>
+      </td>
+      <td>
+        <a href="/dashboard/universities/update/<%= university.id %>">
+          <button type="button" class="btn btn-primary">Update</button>
+        </a>
+      </td>
+      <td>
+        <a href="/dashboard/universities/delete/<%= university.id %>"
+          ><button type="button" class="btn btn-danger">
+            <%= university.deleted ? 'Undo' : 'Delete' %>
+          </button></a
+        >
+      </td>
+    </tr>
+    <% }); %>
+  </tbody>
+</table>

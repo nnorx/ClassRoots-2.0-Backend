@@ -1,0 +1,14 @@
+<%- include('include/head.ejs') -%>
+<noscript>
+    You need to enable JavaScript to run this app.
+</noscript>
+<div class="container-fluid center">
+    <h1>
+        <%= message %>
+    </h1>
+    <h2>
+        <%= error.status %>
+    </h2>
+    <pre><%= error.stack %></pre>
+</div>
+<%- include('include/footer.ejs') -%>

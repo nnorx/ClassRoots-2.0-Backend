@@ -1,0 +1,53 @@
+<table class="table">
+  <thead class=" text-primary">
+    <th>
+      Name
+    </th>
+    <th>
+      Number
+    </th>
+    <th>
+      Update
+    </th>
+    <th>
+      Delete
+    </th>
+  </thead>
+  <tbody>
+    <% for (var i = 0 ; i < sections.length; i++) { %>
+    <form
+      action="/dashboard/classes/sections/update/<%= sections[i].id %>"
+      method="POST"
+    >
+      <tr>
+        <td>
+          <input type="text" value="<%= sections[i].name %>" name="name" />
+        </td>
+        <td>
+          <input
+            type="number"
+            value="<%= sections[i].number %>"
+            name="number"
+          />
+        </td>
+        <td>
+          <a href="/dashboard/classes/sections/update/<%= sections[i].id %>">
+            <button type="submit" class="btn btn-primary">Update</button>
+          </a>
+        </td>
+        <td>
+          <a href="/dashboard/classes/sections/delete/<%= sections[i].id %>"
+            ><button
+              type="button"
+              class="btn <%= sections[i].deleted ? 'btn-info' : 'btn-danger' %>"
+            >
+              <%= sections[i].deleted ? 'Undo' : 'Delete' %>
+            </button></a
+          >
+        </td>
+      </tr>
+    </form>
+
+    <% } %>
+  </tbody>
+</table>

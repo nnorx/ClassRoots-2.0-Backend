@@ -1,0 +1,43 @@
+<%- include('include/head.ejs') -%>
+<noscript>
+    You need to enable JavaScript to run this app.
+</noscript>
+<div class="container-fluid">
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-3 offset-md-4">
+                    <div class="card">
+                        <div class="card-header card-header-primary">
+                            <h4 class="card-title">Dashboard</h4>
+                            <p class="card-category">Login to your account</p>
+                        </div>
+                        <div class="card-body">
+                            <form method="post">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="bmd-label-floating">Email Address</label>
+                                            <input type="email" name="username" class="form-control" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="bmd-label-floating">Password</label>
+                                            <input type="password" name="password" class="form-control" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-primary pull-right">Login</button>
+                                <div class="clearfix"></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include('include/footer.ejs') -%>

@@ -1,0 +1,59 @@
+<form method="post">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="form-group">
+        <label class="bmd-label-floating">University</label>
+        <select
+          name="university"
+          value="<%= selectedClass.university %>"
+          class="form-control"
+          required
+        >
+          <% universities.forEach(function(university){ %>
+          <option value="<%= university._id %>">
+            <%= university.name %>
+          </option>
+          <% }); %>
+        </select>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group">
+        <label class="bmd-label-floating">Class</label>
+        <input
+          type="text"
+          name="name"
+          value="<%= selectedClass.name %>"
+          class="form-control"
+          required
+        />
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group">
+        <label class="bmd-label-floating">Code</label>
+        <input
+          type="text"
+          name="code"
+          value="<%= selectedClass.code %>"
+          class="form-control"
+          required
+        />
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group">
+        <label class="bmd-label-floating">Section</label>
+        <input
+          type="number"
+          name="section"
+          value="<%= selectedClass.section %>"
+          class="form-control"
+          required
+        />
+      </div>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary pull-right">Update Class</button>
+  <div class="clearfix"></div>
+</form>

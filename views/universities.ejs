@@ -1,0 +1,38 @@
+<%- include('include/head.ejs') -%> <%- include('include/sidebar.ejs') -%>
+<noscript>
+  You need to enable JavaScript to run this app.
+</noscript>
+<h1>
+  <%= title %>
+</h1>
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header card-header-primary">
+        <h4 class="card-title">
+          <%= university == null ? 'Add University' : 'Update University'%>
+        </h4>
+        <p class="card-category">Fill up the form</p>
+      </div>
+      <div class="card-body">
+        <%- include(university == null ? 'include/add_university' :
+        'include/update_university') -%>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header card-header-primary">
+        <h4 class="card-title ">Universities</h4>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <%- include('include/universities') -%>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<%- include('include/footer.ejs') -%>

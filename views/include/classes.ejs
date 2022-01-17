@@ -1,0 +1,57 @@
+<table class="table">
+  <thead class=" text-primary">
+    <th>
+      Code
+    </th>
+    <th>
+      Name
+    </th>
+    <th>
+      Univerisity
+    </th>
+    <th>
+      Sections
+    </th>
+    <th>
+      Update
+    </th>
+    <th>
+      Delete
+    </th>
+  </thead>
+  <tbody>
+    <% for (var i = 0 ; i < classes.length; i++) { %>
+    <tr>
+      <td>
+        <%= classes[i].code %>
+      </td>
+      <td>
+        <%= classes[i].name %>
+      </td>
+      <td>
+        <%= classes[i].university.name %>
+      </td>
+      <td>
+        <a href="/dashboard/classes/sections/<%= classes[i].id %>">
+          <button type="button" class="btn btn-success">View</button>
+        </a>
+      </td>
+      <td>
+        <a href="/dashboard/classes/update/<%= classes[i].id %>">
+          <button type="button" class="btn btn-primary">Update</button>
+        </a>
+      </td>
+      <td>
+        <a href="/dashboard/classes/delete/<%= classes[i].id %>"
+          ><button
+            type="button"
+            class="btn <%= classes[i].deleted ? 'btn-info' : 'btn-danger' %>"
+          >
+            <%= classes[i].deleted ? 'Undo' : 'Delete' %>
+          </button></a
+        >
+      </td>
+    </tr>
+    <% } %>
+  </tbody>
+</table>
